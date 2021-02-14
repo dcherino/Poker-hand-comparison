@@ -1,4 +1,4 @@
-# POKER HAND COMPARISON
+# Poker Hand Comparison
 
 A simple program to compare two hands of poker according to the rules of [Texas Hold'em rules](https://en.wikipedia.org/wiki/Texas_hold_%27em#Hand_values).
 
