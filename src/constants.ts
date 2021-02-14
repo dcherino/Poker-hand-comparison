@@ -4,6 +4,7 @@ export enum RESULT {
   TIE,
 }
 
+// Ordered from the lower hand to higher
 export const HAND_TYPE: Array<string> = [
   "highcard",
   "pair",
@@ -17,7 +18,7 @@ export const HAND_TYPE: Array<string> = [
   "royal_flush",
 ];
 
-export const CARD_VALUE: Array<string> = [
+export const CARD_VALUES: Array<string> = [
   "2",
   "3",
   "4",
