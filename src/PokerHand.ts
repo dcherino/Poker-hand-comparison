@@ -1,5 +1,5 @@
-import { HandType } from "./types";
-import { CARD_VALUES, RESULT } from "./constants";
+import { HandType, Suits } from "./types";
+import { RESULT } from "./constants";
 import checkHand from "./methods/checkHand";
 import getHigherCard from "./methods/getHigherCard";
 
@@ -12,7 +12,7 @@ export class PokerHand {
     this.handValues = this.hand.reduce(
       (acc: HandType, currentCard: string) => {
         acc.faces.push(currentCard[0]);
-        acc.suits.push(currentCard[1]);
+        acc.suits.push(currentCard[1] as Suits);
         return acc;
       },
       {
@@ -25,15 +25,10 @@ export class PokerHand {
   compareWith(comparedHand: PokerHand) {
     const hand1: number = checkHand(this.handValues);
     const hand2: number = checkHand(comparedHand.handValues);
-    console.log("Hand 1: ", hand1);
-    console.log("Hand 2: ", hand2);
 
     if (hand1 === 0 && hand2 === 0) {
       const hand1MaxValue = getHigherCard(this.handValues.faces);
       const hand2MaxValue = getHigherCard(comparedHand.handValues.faces);
-
-      console.log("MaxHand 1: ", hand1MaxValue);
-      console.log("MaxHand 2: ", hand2MaxValue);
 
       if (hand1MaxValue > hand2MaxValue) {
         return RESULT.WIN;
@@ -54,10 +49,5 @@ export class PokerHand {
     }
   }
 }
-
-const hand1 = new PokerHand("5C QD 3S 4D 8C");
-const hand2 = new PokerHand("QS 3D 4S 5D 2C");
-
-console.log(hand1.compareWith(hand2));
 
 export default PokerHand;
