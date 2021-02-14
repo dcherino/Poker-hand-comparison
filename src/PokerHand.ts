@@ -26,6 +26,7 @@ export class PokerHand {
     const hand1: number = checkHand(this.handValues);
     const hand2: number = checkHand(comparedHand.handValues);
 
+    // HighCard: Compare higher value of cards if no other option is available
     if (hand1 === 0 && hand2 === 0) {
       const hand1MaxValue = getHigherCard(this.handValues.faces);
       const hand2MaxValue = getHigherCard(comparedHand.handValues.faces);
@@ -38,7 +39,6 @@ export class PokerHand {
         return RESULT.TIE;
       }
     }
-
 
     if (hand1 > hand2) {
       return RESULT.WIN;
