@@ -18,6 +18,8 @@ export const HAND_TYPE: Array<string> = [
   "royal_flush",
 ];
 
+export const SUITS: Array<string> = ["S", "H", "D", "C"];
+
 export const CARD_VALUES: Array<string> = [
   "2",
   "3",
