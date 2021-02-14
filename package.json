@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "type": "module",
+  "jest": {
+    "verbose": true
+  },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
